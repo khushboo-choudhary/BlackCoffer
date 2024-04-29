@@ -1,10 +1,12 @@
 const express = require("express");
 const connect = require("./configs/db");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 const dashboardApi = require("./controllers/dashboardController");
 
+app.use(cors());
 app.use(express.json());
 
 // connect the dashboard collection
